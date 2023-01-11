@@ -20,7 +20,7 @@ const HomeScreen = () => {
     sanityClient
       .fetch(
         `
-      * [_type == "featured"] {
+      *[_type == "featured"] {
       ...,
       restaurants[]->{
         ...,
@@ -87,28 +87,14 @@ const HomeScreen = () => {
 
         {/* {featured } */}
 
-        <FeaturedRow
-          id="1"
-          title="Featured"
-          description="Paid placements from our partners"
-          featuredCategory="featured"
-        />
-
-        {/* tasty discounts */}
-        <FeaturedRow
-          id="2"
-          title="Tasty discounts"
-          description="Paid placements from our partners"
-          featuredCategory="featured"
-        />
-
-        {/* offers near you */}
-        <FeaturedRow
-          id="3"
-          title="Offers near you!"
-          description="Paid placements from our partners"
-          featuredCategory="featured"
-        />
+        {featuredCategories?.map((category) => (
+          <FeaturedRow
+            id={category._id}
+            key={category._id}
+            title={category.name}
+            description={category.short_description}
+          />
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
