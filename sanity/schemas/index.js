@@ -1,11 +1,6 @@
-// import createShema from "part:@sanity/base/schema-creator"
+import category from "./category";
+import dish from "./dish";
+import featured from "./featured";
+import restaurant from "./restaurant";
 
-import { createSchema } from "sanity";
-
-import { SchemaTypes } from "sanity";
-
-
-import category
-
-
-
+export const schemaTypes = [dish, featured, category, restaurant]

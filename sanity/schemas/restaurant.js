@@ -56,7 +56,7 @@ export default defineType({
       name: 'dishes',
       type: 'array',
       title: 'Dishes',
-      of: [{type: 'refernce', to: [{type: 'dish'}]}],
+      of: [{type: 'reference', to: [{type: 'dish'}]}],
     },
   ],
 })

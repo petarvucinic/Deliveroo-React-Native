@@ -1,4 +1,6 @@
-export default {
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
   name: 'featured',
   title: 'Featured Menu categories',
   type: 'document',
@@ -16,14 +18,10 @@ export default {
       validation: (Rule) => Rule.max(200),
     },
     {
+      title: 'Restaurants',
       name: 'restaurants',
       type: 'array',
-      title: 'Restaurants',
-    },
-    {
-      name: 'price',
-      type: 'number',
-      of: [{type: 'refernce', to: [{type: 'restaurant'}]}],
+      of: [{type: 'reference', to: [{type: 'restaurant'}]}],
     },
   ],
-}
+})
